@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Funnel creator</title>
+</head>
+<body>
+    <div class="all">
+
+        <!-- menu options -->
+        <nav class="sidebar">
+            <h2>Funnel creator</h2>
+            <button class="btn" id="button-new" type="button"> Add </button>   
+            <button class="btn" id="button-color" type="button"> Color </button> 
+            <button class="btn" id="button-reverse" type="button"> Flip</button>   
+            <button class="btn" id="button-reset" type="button"> Reset</button>   
+            <div class="credits"> Made by: <a href="https://twitter.com/Super_Mare" target="_blank">Marija Hajnal</a> <a href="https://github.com/MarijaHajnal/funnel-creator" target="_blank">See Github</a> </div>
+        </nav>  
+
+
+        <div class="title-bars-container">
+
+            <!-- funnel title -->
+            <h1 id="funnel-name">Click to add a name</h1>
+            <form id="form-title">
+                <input type="text" id="step-name-title" autocomplete="off" placeholder="Write your title here">
+                <input id="submit-title"  class="submit" type="button" name="submit" value="OK">
+                <div class="validation" id="validation-title">Please add text.</div>
+                <div class="validation" id="validation-title-lenght">Text can be 30 characters long.</div>
+            </form>
+      
+            <!-- bars -->
+            <div class="bar-container">
+
+                <div class="bar one" id="1">
+                    <form id="form-1">
+                        <input type="text" id="step-name-1" autocomplete="off" placeholder="Write your text">
+                        <select id="step-number-1">
+                            <option selected value="92">100%</option>
+                            <option value="80">80%</option>
+                            <option value="62">60%</option>
+                            <option value="40">40%</option>
+                            <option value="28">20%</option>
+                        </select>
+                        <input id="submit-1"  class="submit" type="button" name="submit" value="OK">
+                        <div class="validation" id="validation-1">Please add text.</div>
+                        <div class="validation" id="validation-lenght-1">Text can be 30 characters long.</div>
+                    </form>
+                    <p id="added-txt-1"></p>
+                </div>
+
+
+                <div class="bar two" id="2" >
+                    <form id="form-2">
+                        <input type="text" id="step-name-2" autocomplete="off" placeholder="Write your text ">
+                        <select id="step-number-2">
+                            <option value="85">100%</option>
+                            <option selected value="75">80%</option>
+                            <option value="65">60%</option>
+                            <option value="55">40%</option>
+                            <option value="45">20%</option>
+                        </select>
+                        <input id="submit-2"  class="submit" type="button" name="submit" value="OK">
+                        <div class="validation" id="validation-2">Please add text.</div>
+                        <div class="validation" id="validation-lenght-2">Text can be 30 characters long.</div>
+                    </form>
+                    <p id="added-txt-2"></p>
+                </div>
+
+
+                <div class="bar three" id="3">
+                    <form id="form-3">
+                        <input type="text" id="step-name-3" autocomplete="off" placeholder="Write your text">
+                        <select id="step-number-3">
+                            <option value="85">100%</option>
+                            <option value="75">80%</option>
+                            <option selected value="65">60%</option>
+                            <option value="55">40%</option>
+                            <option value="45">20%</option>
+                        </select>
+                        <input id="submit-3"  class="submit" type="button" name="submit" value="OK">
+                        <div class="validation" id="validation-3">Please add text.</div>
+                        <div class="validation" id="validation-lenght-3">Text can be 30 characters long.</div>
+                    </form>
+                    <p id="added-txt-3"></p>
+                </div>
+
+                <div class="bar four" id="4">
+                    <form id="form-4">
+                        <input type="text" id="step-name-4" autocomplete="off" placeholder="Your text">
+                        <select id="step-number-4">
+                            <option value="85">100%</option>
+                            <option value="75">80%</option>
+                            <option value="65">60%</option>
+                            <option selected value="55">40%</option>
+                            <option value="45">20%</option>
+                        </select>
+                        <input id="submit-4"  class="submit" type="button" name="submit" value="OK">
+                        <div class="validation" id="validation-4">Please add text.</div>
+                        <div class="validation" id="validation-lenght-4">Text can be 30 characters long.</div>
+                    </form>
+                    <p id="added-txt-4"></p>
+                </div>
+
+                <div class="bar five" id="5">
+                    <form id="form-5">
+                        <input type="text" id="step-name-5" autocomplete="off" placeholder="Your text">
+                        <select id="step-number-5">
+                            <option value="85">100%</option>
+                            <option value="75">80%</option>
+                            <option value="65">60%</option>
+                            <option value="55">40%</option>
+                            <option selected value="45">20%</option>
+                        </select>
+                        <input id="submit-5"  class="submit" type="button" name="submit" value="OK">
+                        <div class="validation" id="validation-5">Please add text.</div>
+                        <div class="validation" id="validation-lenght-5">Text can be 30 characters long.</div>
+                    </form>
+                    <p id="added-txt-5"></p>
+                </div> 
+
+            </div>
+        </div>
+    </div>
+ 
+    <script src="main.js"></script>
+
+</body>
+</html>

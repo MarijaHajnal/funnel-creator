@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+h1 {
+    text-align: center;
+    font-size: 4vmin;
+    padding: 6vmin;
+    color: grey;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+    font-size: 2.5vmin;
+    margin: 1vmin;
+    color: grey;
+}
+body {
+    background:#DEE5EF;
+}
+p {
+    text-align: center;
+    padding: 5vmin;
+}
+span {
+    margin-left: 3vmin;
+}
+select {
+    height: 20%;
+    width: 15%;
+    color: grey;
+}
+input[type=text], select {
+    width: 40%;
+    height: 25%;
+    border: none;
+    padding-top: 0%;
+    border-bottom: 0.2vmin solid grey;
+    background: transparent;
+}
+
+
+/* animations */
+@keyframes shake {
+    from {
+        margin-left: -2%;
+    }
+    to {
+        margin-left: 2%;
+    }
+}
+/* two same animation, but with different name, on bar flip/reverse it doesn't work with the same animation */
+@keyframes translate-appear {
+    from {
+        opacity: 0;
+        transform: rotateY(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(+30deg);
+    }
+}
+@keyframes appear {      
+    from {
+        opacity: 0;
+        transform: rotateY(-30deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(+30deg);
+    }
+}
+/* animations end*/
+
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    animation: appear 900ms ease-in-out;
+    width: 80vw;
+    margin-left: 10vw;
+}
+.bar-container.reverse {
+    animation: translate-appear 900ms ease-in-out;
+    
+}
+.reverse div:nth-child(1){
+    -webkit-order: 4;
+    -ms-order: 4;
+    order: 4;
+}
+.reverse div:nth-child(2){
+    -webkit-order: 3;
+    -ms-order: 3;
+    order: 3;
+}
+.reverse div:nth-child(3){
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+}
+.reverse div:nth-child(4){
+    -webkit-order: 1;
+    -ms-order: 1;
+    order: 1;
+}
+
+/* MENU */
+.sidebar {
+    position: fixed;
+    width: 12vmin;
+    height: 100vh;
+    background: linear-gradient(180deg, #99E3E3, #B7B0E8, #E399B4) ;
+    box-shadow: 0.1vmin 0vmin  0.2vmin rgb(129, 128, 128), 0.3vmin 0vmin  0.4vmin #524a88 ;
+}
+/* menu buttons */
+.btn {
+    display: block;
+    margin: 1.5vmin;
+    margin-bottom: 5vmin;
+    width: 9vmin;
+    height: 9vmin;
+    border-radius: 50%;
+    color: #524a88;
+    font-size: 2vmin;
+    background: transparent;
+    border: 0.2vmin dotted #524a88;
+    box-shadow: 0.5vmin 0.4vmin 1vmin #524a88;
+    opacity: 0.8;
+    outline: none;
+}
+.btn:hover {
+  opacity: 1;
+}
+.btn:active {
+  box-shadow: inset 0.5vmin 0.4vmin 1vmin #524a88;
+}
+#button-new {
+    margin-top: 10vmin;
+}
+.credits {
+    position: absolute;
+    bottom: 5vmin;
+    font-size: 0.8rem;
+    color: #524a88;
+    margin: 1vmin;
+    margin-bottom: 1vmin;
+}
+.credits a {
+    display: block;
+    font-size: 0.8rem;
+    color: #574a88;
+    margin: 0.5vmin;
+    margin-top: 0.1vmin;
+    text-align: justify;
+}
+.credits a:hover {
+    opacity: 0.8;
+}
+/* MENU end */
+
+
+/* INPUT FORM for title */
+#step-name-title {
+    display: inline-block;
+    margin-left: 35%;
+    margin-right: auto;
+    margin-top: 2vmin;
+    text-align: center;
+    width: 50vmin;
+    margin-bottom: 5vmin;
+    font-size: 3vmin;
+    padding: 3vmin;
+    color:grey;
+    display: none;
+    animation: appear 450ms ease-in-out;
+}
+#step-name-title::placeholder {
+    opacity: 0.7;
+    font-size: 2.5vmin;
+}
+/* ok button for h1 title */
+#submit-title {
+    display: none;
+}
+
+/* ok button */
+.submit {
+    width: 5vmin;
+    height: 5vmin;
+    border: #595C60 0.2vmin solid;
+    border-radius: 50%;
+    color: #595C60;
+    background: transparent;
+    margin-left: 2%;
+    transition: 300ms ease-in-out;
+    box-shadow: 0.2vmin 0.2vmin 0.5vmin #595C60;
+    opacity: 0.7;
+}
+.submit:active {
+    box-shadow: inset 0.2vmin 0.2vmin 0.5vmin #595C60;
+    opacity: 1;
+  }
+.submit:hover {
+    opacity: 1 ;
+  }
+
+/* validation  */
+.validation {
+   font-size: 0.9rem;
+   color: brown;
+   display: none;
+   animation: shake 250ms 3 alternate ease-in-out, appear 250ms ease-out; 
+   margin-top: 0%;
+}
+/* validation for h1 title */
+#validation-title, #validation-title-lenght {
+    margin-top: -3vmin;
+    margin-bottom: 3vmin;
+    margin-left: 40%;
+    animation: appear 250ms ease-out; 
+}
+
+
+/* BARS */
+.bar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 3vmin;
+    font-size: 2rem;
+    color:darkslategrey;
+    width: 70vmin;
+    font-size: 2.2rem;
+    border-radius: 10vmin;
+    box-shadow: 0.5vmin 0.5vmin 0.6vmin #595C60;
+    transition: 450ms ease-out;
+}
+.one {
+    background: linear-gradient(180deg, #A4F3CD 0%, #99E3E3 100%);
+    width: 70vmin;
+    height: 16vmin;
+}
+.two {
+    background: linear-gradient(180deg, #9BE6E1 0%, #99B7E3 99.1%);
+    width: 60vmin;
+    height: 15vmin;
+}
+.two p {
+    padding: 5vmin;
+    font-size: 2rem;
+}
+.three {
+    background: linear-gradient(180deg, #9ABFE3 0%, #B7B0E8 99.1%, #99B7E3 99.11%);
+    width: 50vmin;
+    height: 13vmin;
+}
+.three p {
+    padding: 4vmin;
+    font-size: 1.8rem;
+}
+.four {
+    background: linear-gradient(180deg, #B3B2E7 0%, #CC99E3 99.1%);
+    width: 40vmin;
+    height: 10vmin;
+    display: none;
+}
+.four p {
+    padding: 3vmin;
+    font-size: 1.6rem;
+}
+.five {
+    background: linear-gradient(180deg, #C99DE4 0%, #E399B4 99.1%);
+    width: 30vmin;
+    font-size: 1.8rem;
+    height: 8vmin;
+    display: none;
+}
+.five p {
+    padding: 2.3vmin;
+    font-size: 1.4rem;
+}
+/* BARS end */
+
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 600px) {
+    /* For smaller screen: */
+        
+        h1 {
+           font-size: 6vmin;
+           margin-top: 5vmin;
+           margin-bottom: 4vmin;
+           margin-left: 5vmin;
+        }
+        select {
+            height: 30%;
+            width: 22%;
+            border-bottom: 0.4vmin solid grey;
+        }
+        input[type=text] {
+            width: 35%;
+            height: 25%;
+            border: none;
+            border-bottom: 0.4vmin solid grey;  
+        }
+      
+        /* Grid on mobile */
+        .all {
+            width: 95vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:  "title-bars-container"
+                                    "sidebar";
+        }
+        .title-bars-container {
+            grid-area: title-bars-container;
+            margin-left: 0vmin;
+        }
+        /* menu on mobile */
+        .sidebar {
+            grid-area: sidebar;
+            position: fixed;
+            bottom: 0vmin;
+            width: 100vw;
+            height: 28vmin;
+            background: linear-gradient(90deg, #99E3E3, #B7B0E8, #E399B4) ;
+            box-shadow: 0vmin 0vmin  0.3vmin rgb(129, 128, 128), 0vmin 0vmin  2vmin #524a88 ;
+        }
+        .sidebar h2 {
+            display: none;
+        }
+        /* menu buttons on mobile */
+        .btn {
+            display: inline-block;
+            margin: 3vmin;
+            margin-top: 5vmin;
+            width: 12vmin;
+            height: 12vmin;
+            font-size: 3vmin;
+        }
+        #button-new {
+            margin-top: 3vmin;
+            margin-left: 15%;
+        }
+        .credits {
+            bottom: 2vmin;
+            font-size: 0.7rem;
+            margin-left: 30%;
+        }
+        .credits a {
+            display: inline;
+            font-size: 0.7rem;
+        }
+
+        /* h1 form on mobile  */
+        #form-title {
+            margin-top: 6vmin;
+            margin-bottom: 5vmin;
+            margin-left: -20vmin;
+        }
+        #step-name-title::placeholder, #step-name-title:: {
+            font-size: 5vmin;
+        }
+
+        /* ok button on mobile */
+        .submit {
+            width: 8vmin;
+            height: 8vmin;
+        }
+
+        /* bars on mobile*/
+        .bar-container {
+            width: 95vw;
+            margin-left: 2.5%;
+        }
+        .one {
+            width: 92vmin;
+            height: 20vmin;
+        }
+        .two {
+            width: 75vmin;
+            height: 19vmin;
+        }
+        .three {   
+            width: 65vmin;
+            height: 18vmin;
+        }
+        .four {
+            width: 55vmin;
+            height: 16vmin;
+        }
+        .five {
+            width: 45vmin;
+            height: 15vmin;
+        }       
+        .five p {
+            padding: 2vmin;
+            font-size: 1rem;
+        }
+
+        /* validation messages on mobile */
+        .validation {
+            font-size: 1.3rem;
+            margin-top: 1vmin;
+        }
+        #validation-title, #validation-title-lenght {
+            margin-top: 0vmin;
+            margin-left: 40%;
+        }
+    }
+/* MOBILE STYLES end */
